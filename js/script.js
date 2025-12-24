@@ -33,16 +33,7 @@ class ContactBook {
         this.render();
     }
 
-    /**
-     * Supprime un contact par son ID
-     * @param {Number} id - ID du contact à supprimer
-     */
-    deleteContact(id) {
-        this.contacts = this.contacts.filter(c => c.id !== id);
-        this.saveToLocalStorage();
-        this.render();
-    }
-
+   
     /**
      * Affiche tous les contacts dans le tableau
      */
@@ -130,28 +121,7 @@ class ContactBook {
         reader.readAsText(file);
     }
 
-    /**
-     * Recherche des contacts par mot-clé
-     * @param {String} keyword - Mot-clé de recherche
-     * @returns {Array} Contacts correspondants
-     */
-    search(keyword) {
-        const lowerKeyword = keyword.toLowerCase();
-        return this.contacts.filter(contact => 
-            contact.nom.toLowerCase().includes(lowerKeyword) ||
-            contact.prenom.toLowerCase().includes(lowerKeyword) ||
-            contact.email.toLowerCase().includes(lowerKeyword) ||
-            (contact.telephone && contact.telephone.includes(keyword))
-        );
-    }
-
-    /**
-     * Récupère le nombre total de contacts
-     * @returns {Number} Nombre de contacts
-     */
-    getCount() {
-        return this.contacts.length;
-    }
+  
 }
 
 // Instance globale
