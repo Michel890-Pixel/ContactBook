@@ -35,8 +35,8 @@ Application simple pour gérer vos contacts avec une interface responsive. Les d
 ```
 contact-book/
 ├── index.html    # Structure de la page
-├── style.css     # Styles (Grid & Flexbox)
-└── script.js     # Logique JavaScript
+├── /css/style.css     # Styles (Grid & Flexbox)
+└── /js/script.js     # Logique JavaScript
 ```
 
 ---
