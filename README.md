@@ -133,6 +133,7 @@ header {
 
 ---
 
+
 ## 💾 Stockage
 
 Les contacts sont sauvegardés dans le **LocalStorage** du navigateur :

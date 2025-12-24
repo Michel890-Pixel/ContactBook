@@ -74,6 +74,7 @@ class ContactBook {
         return div.innerHTML;
     }
 
+    
     /**
      * Exporte les contacts au format JSON
      */
