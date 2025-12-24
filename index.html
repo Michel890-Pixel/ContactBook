@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Book - Grid & Flexbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>📒 Carnet d'Adresses</h1>
+
+        <aside class="info-note">
+            <h4>📱 Fenêtre 'modale'</h4>
+            <ul>
+                <li><strong>Stockage :</strong> LocalStorage avec fichier JSON téléchargeable</li>
+                <li><strong>Du choix :</strong> Approche fonctionnelle, Approche objet</li>
+                <li><strong>Layout :</strong> Grid & Flexbox - Pas de DIV</li>
+                <li><strong>Validation :</strong> Bouton grisé si champs incomplets</li>
+            </ul>
+        </aside>
+
+        <header>
+            <h2>Contact book</h2>
+            <button class="btn-add" onclick="openModal()">+</button>
+        </header>
+
+        <section>
+            <table id="contactTable">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Contacts seront ajoutés ici -->
+                </tbody>
+            </table>
+        </section>
+
+        <footer>
+            <span>© 2025 - Acme Corp.</span>
+            <button onclick="exportContacts()" class="btn-export">📥 Exporter JSON</button>
+            <button onclick="importContacts()" class="btn-export">📤 Importer JSON</button>
+        </footer>
+    </main>
+
+    <!-- Modale -->
+    <aside class="modal" id="contactModal">
+        <article class="modal-content">
+            <header class="modal-header">
+                <h3>Nouveau Contact</h3>
+                <button class="btn-close" onclick="closeModal()">&times;</button>
+            </header>
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+                <fieldset class="form-group">
+                    <label for="nom">Nom:</label>
+                    <input type="text" id="nom" name="nom" required>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="prenom">Prénom:</label>
+                    <input type="text" id="prenom" name="prenom" required>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="telephone">Téléphone:</label>
+                    <input type="tel" id="telephone" name="telephone" required>
+                </fieldset>
+                <button type="submit" class="btn-validate" id="btnValidate" disabled>Valider</button>
+            </form>
+        </article>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+</html>
